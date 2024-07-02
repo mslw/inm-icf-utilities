@@ -20,8 +20,8 @@ From: debian:bookworm-slim
     # datalad-installer cannot install outside /tmp, which will not make it
     # into the final image, move
     mv $(cut -d = -f 2 < /tmp/dlinstaller_env.sh | cut -d : -f 1) /git-annex
-    # the inm-icf-utilities
-    git clone https://github.com/psychoinformatics-de/inm-icf-utilities.git /inm-icf-utils
+    # fork of the inm-icf-utilities
+    git clone https://github.com/Aswendt-Lab/inm-icf-utilities.git /inm-icf-utils
     # and the inm-icf-utilities dependencies
     python3 -m pip install --break-system-packages -r /inm-icf-utils/requirements-devel.txt
     # enable "next" extension for patching datalad core, done inside the image, not
